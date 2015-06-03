@@ -9,7 +9,7 @@ Missile::Missile(float x, float y) {
 }
 
 void Missile::update() {
-    rect.translate(0, -5);
+    rect.translate(0, -10);
 }
 
 void Missile::draw() const {
