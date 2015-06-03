@@ -20,9 +20,6 @@ void ofApp::setup(){
     for (int i=0; i<NSTARS; i++) {
         stars[i].setup();
     }
-
-    missiles.push_back(Missile(100, 700));
-    missiles.push_back(Missile(500, 800));
 }
 
 //--------------------------------------------------------------
@@ -81,7 +78,8 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+    Missile m = player.fireMissile();
+    missiles.push_back(m);
 }
 
 //--------------------------------------------------------------

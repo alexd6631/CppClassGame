@@ -36,3 +36,8 @@ void Player::draw() const {
        x + W, y + H
     );
 }
+
+Missile Player::fireMissile() {
+    ofPoint center = rect.getCenter();
+    return Missile(center.x, center.y);
+}

@@ -1481,7 +1481,7 @@
 1425333441 d:\dev ynov\of_v0.8.4_win_cb_release\apps\myapps\tutoof\src\ofapp.h
 	"ofMain.h"
 
-1433327372 source:d:\dev ynov\of_v0.8.4_win_cb_release\apps\myapps\tutoof\src\ofapp.cpp
+1433328607 source:d:\dev ynov\of_v0.8.4_win_cb_release\apps\myapps\tutoof\src\ofapp.cpp
 	"ofApp.h"
 	"Star.h"
 	"Player.h"
@@ -1493,12 +1493,13 @@
 
 1433256405 d:\dev ynov\of_v0.8.4_win_cb_release\apps\myapps\tutoof\include\star.h
 
-1433324444 source:d:\dev ynov\of_v0.8.4_win_cb_release\apps\myapps\tutoof\src\player.cpp
+1433328485 source:d:\dev ynov\of_v0.8.4_win_cb_release\apps\myapps\tutoof\src\player.cpp
 	"Player.h"
 	"ofMain.h"
 
-1433258777 d:\dev ynov\of_v0.8.4_win_cb_release\apps\myapps\tutoof\include\player.h
+1433328380 d:\dev ynov\of_v0.8.4_win_cb_release\apps\myapps\tutoof\include\player.h
 	"ofRectangle.h"
+	"Missile.h"
 
 1433325773 source:d:\dev ynov\of_v0.8.4_win_cb_release\apps\myapps\tutoof\src\missile.cpp
 	"Missile.h"
