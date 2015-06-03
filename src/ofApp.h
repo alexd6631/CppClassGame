@@ -1,9 +1,16 @@
 #pragma once
 
 #include "ofMain.h"
+#include "Star.h"
+#include "Player.h"
+#include "Missile.h"
 
 class ofApp : public ofBaseApp{
-
+    private:
+        static const int NSTARS = 25;
+        Star stars[NSTARS];
+        Player player;
+        std::list<Missile> missiles;
 	public:
 		void setup();
 		void update();
@@ -18,5 +25,5 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		
+
 };

@@ -1,14 +1,4 @@
 #include "ofApp.h"
-#include "Star.h"
-#include "Player.h"
-#include "Missile.h"
-
-const int NSTARS = 25;
-
-Star stars[NSTARS];
-Player player;
-
-std::list<Missile> missiles;
 
 
 //--------------------------------------------------------------
@@ -39,8 +29,6 @@ void ofApp::update() {
             it++;
         }
     }
-
-    cout << missiles.size() << endl;
 }
 
 //--------------------------------------------------------------
@@ -78,8 +66,12 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-    Missile m = player.fireMissile();
-    missiles.push_back(m);
+    if (missiles.size() < 3) {
+        Missile m = player.fireMissile();
+        missiles.push_back(m);
+    } else {
+        cout << "Surchauffe" << endl;
+    }
 }
 
 //--------------------------------------------------------------
