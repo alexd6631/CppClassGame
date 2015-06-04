@@ -10,6 +10,8 @@ void ofApp::setup(){
     for (int i=0; i<NSTARS; i++) {
         stars[i].setup();
     }
+
+    enemies.push_back(Enemy());
 }
 
 //--------------------------------------------------------------
@@ -29,6 +31,18 @@ void ofApp::update() {
             it++;
         }
     }
+
+    for (std::list<Enemy>::iterator it = enemies.begin();
+         it != enemies.end();
+         ) {
+        it->update();
+        if (it->isOutside()) {
+            it = enemies.erase(it);
+        } else {
+            it++;
+        }
+    }
+
 }
 
 //--------------------------------------------------------------
@@ -40,6 +54,12 @@ void ofApp::draw(){
 
     for (std::list<Missile>::iterator it = missiles.begin();
          it != missiles.end();
+         it++) {
+        it->draw();
+    }
+
+    for (std::list<Enemy>::iterator it = enemies.begin();
+         it != enemies.end();
          it++) {
         it->draw();
     }

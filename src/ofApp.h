@@ -4,6 +4,7 @@
 #include "Star.h"
 #include "Player.h"
 #include "Missile.h"
+#include "Enemy.h"
 
 class ofApp : public ofBaseApp{
     private:
@@ -11,6 +12,7 @@ class ofApp : public ofBaseApp{
         Star stars[NSTARS];
         Player player;
         std::list<Missile> missiles;
+        std::list<Enemy> enemies;
 
         void tryFireMissile();
 	public:
