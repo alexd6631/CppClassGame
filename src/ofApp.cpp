@@ -68,6 +68,16 @@ void ofApp::update() {
         eit++;
     }
 
+    for (std::list<Enemy>::iterator eit = enemies.begin();
+         eit != enemies.end();) {
+        if (collisionPlayerEnemy(player, *eit)) {
+            eit = enemies.erase(eit);
+            cout << "Ouch :(" << endl;
+        } else {
+            eit++;
+        }
+    }
+
 
 }
 
