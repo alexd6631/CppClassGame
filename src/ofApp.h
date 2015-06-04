@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "Missile.h"
 #include "Enemy.h"
+#include "EnemyGenerator.h"
 
 class ofApp : public ofBaseApp{
     private:
@@ -13,6 +14,7 @@ class ofApp : public ofBaseApp{
         Player player;
         std::list<Missile> missiles;
         std::list<Enemy> enemies;
+        EnemyGenerator enemyGenerator;
 
         void tryFireMissile();
 	public:

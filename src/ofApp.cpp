@@ -5,13 +5,13 @@
 void ofApp::setup(){
     ofBackground(0, 0, 0);
     ofSetFrameRate(60);
+    ofSetVerticalSync(true);
 
     player.setup();
     for (int i=0; i<NSTARS; i++) {
         stars[i].setup();
     }
-
-    enemies.push_back(Enemy());
+    enemyGenerator.setup();
 }
 
 //--------------------------------------------------------------
@@ -41,6 +41,11 @@ void ofApp::update() {
         } else {
             it++;
         }
+    }
+
+    if (enemyGenerator.update()) {
+        Enemy e = enemyGenerator.createEnemy();
+        enemies.push_back(e);
     }
 
 }
