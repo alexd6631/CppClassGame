@@ -14,6 +14,7 @@ class Missile
         void update();
         void draw() const;
         bool isOutside() const;
+        const ofRectangle &getRect() const;
 };
 
 #endif // MISSILE_H

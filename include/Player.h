@@ -18,6 +18,8 @@ class Player
 
         bool canFireMissile();
         Missile fireMissile();
+
+        const ofRectangle &getRect() const;
 };
 
 #endif // PLAYER_H

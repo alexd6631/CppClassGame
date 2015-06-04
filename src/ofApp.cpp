@@ -16,6 +16,11 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update() {
+    float fps = ofGetFrameRate();
+    if (fps < 58) {
+        cout << "FPS " << ofGetFrameRate() << endl;
+    }
+
     player.update();
     for (int i=0; i<NSTARS; i++) {
         stars[i].update();
@@ -47,6 +52,22 @@ void ofApp::update() {
         Enemy e = enemyGenerator.createEnemy();
         enemies.push_back(e);
     }
+
+    for (std::list<Enemy>::iterator eit = enemies.begin();
+         eit != enemies.end();) {
+        for (std::list<Missile>::iterator mit = missiles.begin();
+         mit != missiles.end();) {
+            if (collisionMissileEnemy(*mit, *eit)) {
+                cout << "Collision" << endl;
+                missiles.erase(mit);
+                enemies.erase(eit);
+                break;
+            }
+            mit++;
+         }
+        eit++;
+    }
+
 
 }
 
@@ -123,4 +144,12 @@ void ofApp::tryFireMissile() {
     } else {
         cout << "Surchauffe" << endl;
     }
+}
+
+bool ofApp::collisionMissileEnemy(const Missile &m, const Enemy &e) const {
+    return m.getRect().intersects(e.getRect());
+}
+
+bool ofApp::collisionPlayerEnemy(const Player &p, const Enemy &e) const {
+    return p.getRect().intersects(e.getRect());
 }

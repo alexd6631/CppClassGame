@@ -50,3 +50,7 @@ bool Player::canFireMissile() {
     unsigned long long elapsedTime = ofGetElapsedTimeMillis();
     return elapsedTime - lastMissileTime > 150;
 }
+
+const ofRectangle &Player::getRect() const {
+    return rect;
+}

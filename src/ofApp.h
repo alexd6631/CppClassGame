@@ -17,6 +17,9 @@ class ofApp : public ofBaseApp{
         EnemyGenerator enemyGenerator;
 
         void tryFireMissile();
+        bool collisionMissileEnemy(const Missile &m, const Enemy &e) const;
+        bool collisionPlayerEnemy(const Player &p, const Enemy &e) const;
+
 	public:
 		void setup();
 		void update();

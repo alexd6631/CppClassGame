@@ -25,3 +25,7 @@ void Enemy::draw() const {
 bool Enemy::isOutside() {
     return rect.getY() > ofGetHeight();
 }
+
+const ofRectangle &Enemy::getRect() const {
+    return rect;
+}

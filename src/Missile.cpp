@@ -21,3 +21,7 @@ void Missile::draw() const {
 bool Missile::isOutside() const {
     return rect.getBottom() < 0;
 }
+
+const ofRectangle &Missile::getRect() const {
+    return rect;
+}

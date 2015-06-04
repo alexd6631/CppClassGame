@@ -15,6 +15,7 @@ class Enemy
         void update();
         void draw() const;
         bool isOutside();
+        const ofRectangle &getRect() const;
     protected:
 
 };
