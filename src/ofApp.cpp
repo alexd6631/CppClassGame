@@ -46,7 +46,9 @@ void ofApp::draw(){
 }
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    if (key == 32) {
+        tryFireMissile();
+    }
 }
 
 //--------------------------------------------------------------
@@ -66,12 +68,7 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-    if (missiles.size() < 3) {
-        Missile m = player.fireMissile();
-        missiles.push_back(m);
-    } else {
-        cout << "Surchauffe" << endl;
-    }
+    tryFireMissile();
 }
 
 //--------------------------------------------------------------
@@ -92,4 +89,13 @@ void ofApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){
 
+}
+
+void ofApp::tryFireMissile() {
+    if (player.canFireMissile()) {
+        Missile m = player.fireMissile();
+        missiles.push_back(m);
+    } else {
+        cout << "Surchauffe" << endl;
+    }
 }

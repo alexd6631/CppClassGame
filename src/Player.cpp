@@ -5,7 +5,7 @@ static const int W = 50;
 static const int H = 80;
 
 Player::Player() {
-    //ctor
+    lastMissileTime = 0;
 }
 
 void Player::setup() {
@@ -38,6 +38,15 @@ void Player::draw() const {
 }
 
 Missile Player::fireMissile() {
+    if (!canFireMissile()) {
+        throw string("Impossible de tirer un missile");
+    }
     ofPoint center = rect.getCenter();
+    lastMissileTime = ofGetElapsedTimeMillis();
     return Missile(center.x, center.y);
+}
+
+bool Player::canFireMissile() {
+    unsigned long long elapsedTime = ofGetElapsedTimeMillis();
+    return elapsedTime - lastMissileTime > 150;
 }

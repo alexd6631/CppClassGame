@@ -8,6 +8,7 @@ class Player
 {
     private:
         ofRectangle rect;
+        unsigned long long lastMissileTime;
     public:
         Player();
         void setup();
@@ -15,6 +16,7 @@ class Player
         void update();
         void draw() const;
 
+        bool canFireMissile();
         Missile fireMissile();
 };
 

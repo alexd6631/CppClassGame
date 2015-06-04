@@ -11,6 +11,8 @@ class ofApp : public ofBaseApp{
         Star stars[NSTARS];
         Player player;
         std::list<Missile> missiles;
+
+        void tryFireMissile();
 	public:
 		void setup();
 		void update();
