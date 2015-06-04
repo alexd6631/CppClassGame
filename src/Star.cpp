@@ -23,5 +23,6 @@ void Star::update() {
 void Star::draw() const {
     ofFill();
     ofSetColor(255, 255, 255);
-    ofCircle(x, y, radius);
+    ofRect(x - radius, y - radius, radius * 2, radius * 2);
+    //ofCircle(x, y, radius);
 }
